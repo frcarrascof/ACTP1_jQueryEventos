@@ -38,10 +38,29 @@
   <meta charset="utf-8">
 	<title>Ejercicio 04</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../_assets/js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
   <button class="add_name">+</button>
   <ul class="names"></ul>
+  <script type="text/javascript">
+    //Agrego evento al botón
+    $('.add_name').click(function(){
+      var name = prompt('Ingrese un nombre');
 
+      if (name ==='') {
+        alert("Debes agregar un nombre");
+        return;
+      }
+
+      $('.names').append('<li><span>'+name+'</span><a href="#" class="remove_name"> Remove </a></li>');
+    });
+
+    //Prevenir default
+    $('.names').on('click', 'a[href="#"]', function(evt){
+      evt.preventDefault();
+      console.log($(this).parent().remove());
+    });
+  </script>
 </body>
 </html>

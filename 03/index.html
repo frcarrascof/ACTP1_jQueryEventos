@@ -17,7 +17,7 @@
 		la diferencia?
 
 	3. Seleccionar el li que contiene el link número 6 e inserta por medio del
-	método prepend el string con el emoji: '😎 ' (emoji de la cara con los
+	método prepend el string con el emoji: '😎😎😎😎😎' (emoji de la cara con los
 	anteojos de sol)
 	4. Con la misma selección utilizaremos el método after para insertar este
 	string: '🙂'
@@ -42,9 +42,10 @@
 <head>
 	<meta charset="utf-8">
 	<title>Ejercicio 03</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="../_assets/js/jquery-3.3.1.min.js"></script>
+</head>
 <body>
-
 	<nav class="navbar">
 		<ul>
 			<li><a href="#">link 1</a></li>
@@ -60,6 +61,17 @@
 			<li><a href="#">link 9</a></li>
 		</ul>
 	</nav>
+	<script type="text/javascript">
+		/* Seleccionar el cuarto li y por medio de un append
+		agrega este string: '<ul><li><a href="#">link 4.a</a></li></ul>' */
+		var link6 = $('li:eq(5)');
 
+		$('li:eq(3)')
+		.append('<ul><li><a href="#">link 4.a</a></li></ul>')
+		.before('<li><a href="#">link 3.5</a></li>');
+		/*append actua como hermano*/
+
+		link6.prepend('😎').after('🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂');
+	</script>
 </body>
 </html>

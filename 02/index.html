@@ -21,13 +21,13 @@
 	clase header__main y hacerlos el doble de su tamaño.
 
 -->
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta charset="utf-8">
 	<title>Ejercicio 02</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="../_assets/js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
 	<header class="header__main">
@@ -136,5 +136,20 @@
 	<footer class="footer__main">
 		<p class="footer__legal">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus sint praesentium laboriosam atque placeat architecto, maxime temporibus sequi veniam quae culpa accusantium dignissimos natus perferendis mollitia quam optio incidunt. Esse!</p>
 	</footer>
+	<script type="text/javascript">
+		//$('article').eq(3).find('a').eq(3).text('dbsjsdsd');
+		$('article:eq(3) a:contains(Snapchat)')
+		.text('Pinterest')
+		.attr('href','http://pinterest.com');
+
+		$('a[href="#"]').click(function(evt){
+			evt.preventDefault();
+		});
+
+		var h2 = $('.header__main>h2');
+		var newSize = parseInt(h2.css('font-size'))*2;
+		h2.css('font-size',newSize);
+
+	</script>
 </body>
 </html>
